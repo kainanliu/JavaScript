@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //we want to let num1 stores 10 and num2 stores 20 and then num1 stores 20 and num2 stores 10
+        //to do that we need to make a temp holding place where we can give 10 to temp and free up num1
+        //and move 20 from num2 to num1 and then move 10 from temp to num2
+        //1声明一个临时变量
+        //2把num1的值给temp
+        //3把num2的值给num1
+        //4把temp的值给num2
+        let num1 = 10
+        let num2 = 20
+        let temp
+        //都是把右边给左边
+        temp = num1
+        num1 = num2
+        num2 = temp
+        console.log(num1, num2)
+    </script>
+</body>
+</html>
