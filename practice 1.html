@@ -5,9 +5,11 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- use external or internal JavaScript to write an alert promp that says "努力，奋斗" -->
     <script>
-        alert('努力，奋斗')
+        //1.用书输入
+        let num = +prompt('请输入一个数：') //do not forget about the + sign because I will convert the string to number
+        //2.弹出结果
+        alert(num % 4 === 0 && num % 100 !== 0)
     </script>
 </body>
 </html>
