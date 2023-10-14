@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //1.外层循环打印行数
+        // for (let i = 1; i <= 5; i++) {
+        //     //2.里层循环打印几个星星
+        //     for (let j = 1; j <= 5; j++) {
+        //         document.write('★')
+        //     }
+        //     // 进行换行显示
+        //     document.write('<br>')
+        // }
+
+        
+        let row = +prompt('请输入行数：')
+        let col = +prompt('请输入列数：')
+        //1.外层循环打印行数
+        for (let i = 1; i <= row; i++) {
+            //2.里层循环打印几个星星
+            for (let j = 1; j <= col; j++) {
+                document.write('★')
+            }
+            // 进行换行显示
+            document.write('<br>')
+        }
+    </script>
+</body>
+</html>
