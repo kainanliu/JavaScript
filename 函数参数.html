@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function getSum(end) {   //end = 50
+        //     // console.log(end)
+        //     let sum = 0
+        //     for (let i = 1; i <= end; i++) {
+        //         sum += i
+        //     }
+        //     console.log(sum)
+        // }
+        // getSum(50)  //1到50的累加和
+        // getSum(100) //1到100的累加和
+
+
+        // function getSum(start = 0, end = 0) {   //end = 50
+        //     // 形参 形式上的参数
+        //     // console.log(end)
+        //     let sum = 0
+        //     for (let i = start; i <= end; i++) {
+        //         sum += i
+        //     }
+        //     console.log(sum)
+        // }
+        // getSum(1, 50)  //调用的小括号里 实参 - 实际的参数
+        // getSum(100, 200)   //调用的小括号里 实参 - 实际的参数
+
+
+        //函数求和
+        function getSum(x = 0, y = 0) {
+            document.write(x + y)
+        }
+        getSum(1, 2)
+        // getSum() //undefined(x的默认值) + undefined(y的默认值) 所以输出是 NaN
+        //形参 给予默认值后（x = 0） 更完整些
+        getSum() //0
+        //有参数 优先执行有参数，没有参数执行默认值
+    </script>
+</body>
+</html>
