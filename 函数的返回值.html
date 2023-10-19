@@ -7,14 +7,31 @@
 <body>
     <script>
         // 函数的返回值
-        function fn() {
-            return 20
-        }
+        // function fn() {
+        //     return 20
+        // }
         // 相当于执行了  fn()  是调用者 fn() = 20
         // console.log(fn())
         // let num = prompt('请输入数字')
+        // let re = fn()
+        // console.log(re)
+
+
+        function getTotalPrice(x = 0, y = 0) {
+            return x + y
+            //return后面的代码不会被执行，return不能换行写，要不然就会return undefined
+        }
+        // console.log(getTotalPrice(1, 2))
+        // console.log(getTotalPrice(1, 2))
+        let sum = getTotalPrice(1, 2)
+        console.log(sum)
+        console.log(sum)
+
+        function fn() {
+
+        }
         let re = fn()
-        console.log(re)
+        console.log(re) //undefined
     </script>
 </body>
 </html>

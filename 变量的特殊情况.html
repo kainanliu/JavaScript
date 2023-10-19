@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let num = 20
+        // function fn() {
+        //     num = 10  //不声明直接赋值会显示，全局变量来看 强烈不允许的
+        // }
+        // fn()
+        // console.log(num)
+
+        // function fun(x, y) {
+        //     // 形参可以看作是函数的局部变量
+        //     console.log(x)
+        // }
+        // fun(1, 2)
+        // console.log(x) //错误的
+
+
+        let num = 10
+        function fn() {
+            let num = 20
+            function fun() {
+                let num = 30
+                console.log(num)
+            }
+            fun()
+        }
+        fn()
+        //没问题因为这三个num是在三个不同的局， log会找最近的num，这里就是30
+    </script>
+</body>
+</html>
