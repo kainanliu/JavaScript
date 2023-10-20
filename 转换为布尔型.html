@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Boolean会去转换为布尔值
+        console.log(Boolean('pink')) //true
+        console.log(Boolean('')) //fase
+        console.log(Boolean(0)) //fase
+        console.log(Boolean(90)) //true
+        console.log(Boolean(-1)) //true
+        console.log(Boolean(0.3))  //true
+        console.log(Boolean(undefined))  //false
+        console.log(Boolean(null))  //false
+        console.log(Boolean(NaN))  //false
+
+        console.log(false && 20) //false
+        console.log(5 < 3 && 20) //false
+        console.log(undefined && 20) //undefined
+        console.log(null && 20) //null
+        console.log(0 && 20)  //0
+        console.log(10 && 20) //20
+
+        console.log(false || 20) //20
+        console.log(5 < 3 || 20) //20
+        console.log(undefined || 20) //20
+        console.log(null || 20) //20
+        console.log(0 || 20) //20
+        console.log(10 || 20) //10
+
+        console.log('' + 1) //'1'
+        console.log('' - 2) //2
+        console.log(null + 3) //3
+        console.log(null - 2) //-2
+        console.log(undefined - 2) //NaN
+        null == undefined //true
+        null === undefined //false
+
+        console.log('' - 1) //-1
+        console.log('pink老师' - 1) //NaN
+        console.log(null + 1) //1
+        console.log(undefined + 1) //NaN
+        console.log(NaN + 1) //NaN
+
+        let age
+        if (age) {
+            console.log(11)
+        }
+    </script>
+</body>
+</html>

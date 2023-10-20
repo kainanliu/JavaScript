@@ -3,56 +3,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        h2 {
-            text-align: center;
-        }
-        table {
-            /* 合并相邻边框 */
-            border-collapse: collapse;
-            height: 80px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        th {
-            padding: 5px 30px;
-        }
-        table,
-        th,
-        td {
-            border: 1px solid #000;
-        }
-    </style>
 </head>
 <body>
-    <h2>订单确认</h2>
-
     <script>
-        //1.用户输入
-        let price = +prompt('请输入商品价格：')
-        let num = +prompt('请输入商品数量：')
-        let address = prompt('请输入收货地址：')
-        //2.计算总额
-        let total = price * num
-        //3.页面打印
-        document.write(`
-        <table>
-        <tr>
-            <th>商品名称</th>
-            <th>商品价格</th>
-            <th>商品数量</th>
-            <th>总价</th>
-            <th>收货地址</th>
-        </tr>
-        <tr>
-            <td>小米青春版PLUS</td>
-            <td>${price}元</td>
-            <td>${num}</td>
-            <td>${total}元</td>
-            <td>${address}</td>
-        </tr>
-    </table>
-        `)
+        // 1.用户输入
+        let second = +prompt('请输入秒数：')
+        // 2.封装函数
+        function getTime(t) {
+            // console.log(t) //总的秒数
+            // 3.转换
+            //小时：h = parseInt(总秒数 / 60 / 60 % 24)
+            //分钟：m = parseInt(总秒数 / 60 % 60)
+            //秒数：s = parseInt(总秒数 % 60)
+            let h = parseInt(t / 60 / 60 % 24)
+            let m = parseInt(t / 60 % 60)
+            let s = parseInt(t % 60)
+            h = h < 10 ? '0' + h : h
+            m = m < 10 ? '0' + m : m
+            s = s < 10 ? '0' + s : s
+            // console.log(h, m, s) 
+            return `转换完毕之后是${h}小时${m}分${s}秒`
+        }
+        let str = getTime(second)
+        document.write(str)
+        console.log(h)
     </script>
 </body>
 </html>
