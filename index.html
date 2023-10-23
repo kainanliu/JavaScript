@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box w">
+        <div class="box-hd">
+            <h3>精品推荐</h3>
+            <a href="#">产看全部</a>
+        </div>
+        <div class="box-bd">
+            <ul class="clearfix">
+                <!-- <li>
+                    <a href="#">
+                        <img src="images/course01.png" alt="">
+                        <h4>
+                            Think PHP 5.0 博客系统实战项目演习
+                        </h4>
+                        <div class="info">
+                            <span>高级</span> . <span>1125</span>人在学
+                        </div>
+                    </a>
+                </li> -->
+                <script>
+                    let data = [
+                        {
+                            src: 'images/course01.png',
+                            title: 'Think PHP 5.0',
+                            num: 1125
+                        },
+                        {
+                            src: 'images/course02.png',
+                            title: 'Android',
+                            num: 357
+                        },
+                        {
+                            src: 'images/course03.png',
+                            title: 'Angular2',
+                            num: 22250
+                        },
+                        {
+                            src: 'images/course04.png',
+                            title: 'Android APP',
+                            num: 389
+                        }
+                    ]
+
+                    for (let i = 0; i < data.length; i++) {
+                        document.write(`
+                                    <li>
+                                        <a href="#">
+                                            <img src=${data[i].src} title="${data[i].src}">
+                                            <h4>
+                                                ${data[i].title}
+                                            </h4>
+                                            <div class="info">
+                                                <span>高级</span> . <span>${data[i].num}</span>人在学
+                                            </div>
+                                        </a>
+                                    </li>
+                                    `)
+                    }
+                </script>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
