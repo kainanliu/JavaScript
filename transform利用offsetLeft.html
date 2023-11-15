@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 底部模块 -->
+    <footer class="app">
+        <div class="btn-app">
+            <i class="iconfont Navbar-logo"></i>
+            打开App，看你感兴趣的视频
+        </div>
+    </footer>
+    <script>
+        // 1.获取父元素 添加事件委托
+        const list = document.querySelector('.tabs-list')
+        const line = document.querySelector('.line')
+        // 2.给a注册事件
+        list.addEventListener('click', function(e) {
+            // 判断点击的是a
+            if (e.target.tagName === 'A') {
+                // console.log(11)
+                // 得到当前的连接的offsetLeft
+                // console.log(e.target.offsetLeft)
+                // 让line盒子来进行移动
+                line.style.tranform = `translateX(${e.target.offsetLeft}px)`
+            }
+        })
+    </script>
+</body>
+</html>
