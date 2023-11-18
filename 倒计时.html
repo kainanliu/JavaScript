@@ -82,7 +82,7 @@
             if (flag) {
                 // 3. 如果是true 则返回 #ffffff
                 let str = '#'
-                let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+                let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
                 // 利用for循环随机抽6次 累加到str里面
                 for (let i = 1; i <= 6; i++) {
                     // 每次要随机从数组里面抽取一个
@@ -103,6 +103,7 @@
 
         // 页面刷新随即得到颜色
         const countdown = document.querySelector('.countdown')
+        console.log(getRandomColor());
         countdown.style.backgroundColor = getRandomColor()
         // 函数封装 getCountTime
         function getCountTime() {
