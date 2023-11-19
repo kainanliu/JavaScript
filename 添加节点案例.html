@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box w">
+        <div class="box-hd">
+            <h3>精品推荐</h3>
+            <a href="#">查看全部</a>
+        </div>
+        <div class="box-bd">
+            <ul class="clearfix">
+            </ul>
+        </div>
+    </div>
+    <script>
+        // 1.重构
+        let data = [
+                        {
+                            src: 'images/course01.png',
+                            title: 'Think PHP 5.0',
+                            num: 1125
+                        },
+                        {
+                            src: 'images/course02.png',
+                            title: 'Android',
+                            num: 357
+                        },
+                        {
+                            src: 'images/course03.png',
+                            title: 'Angular2',
+                            num: 22250
+                        },
+                        {
+                            src: 'images/course04.png',
+                            title: 'Android APP',
+                            num: 389
+                        }
+                    ]
+        
+        const ul = document.querySelector('.box-bd ul')
+        // 1. 根据数据的个数，创建 对应的小li
+        for (let i = 0; i < data.length; i++) {
+            // 2.创建新的小li
+            const li = document.createElement('li')
+            // 把内容给li
+            li.innerHTML = `
+                    <a href="#">
+                        <img src=${data[i].src} alt="">
+                        <h4>
+                            ${data[i].title}
+                        </h4>
+                        <div class="info">
+                            <span>高级</span> . <span>${data[i].num}</span>人在学
+                        </div>
+                    </a>
+            `
+            // 3.ul追加小li
+            ul.appendChild(li)
+        }
+    </script>
+</body>
+</html>
