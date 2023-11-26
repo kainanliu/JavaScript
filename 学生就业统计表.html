@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>学生就业统计表</h1>
+    <form class="info" autocomplete="off">
+        <input type="text" class="uname" name="uname" placeholder="姓名">
+        <input type="text" class="age" name="age" placeholder="年龄">
+        <input type="text" class="salary" name="salary" placeholder="薪资">
+        <select name="gender" class="gender">
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+        <select name="city" class="city">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+        <button class="add"></button>
+    </form>
+
+    <script>
+        const initData = [
+            {
+                stuId: 1,
+                uname: '迪丽热巴',
+                age: 22,
+                gender: '女',
+                salary: '12000',
+                city: '北京',
+                time: '2009/9/9 08:08:08'
+            }
+        ]
+
+        // localStorage.setItem('data', JSON.stringify(initData))
+
+        // 1.渲染业务
+        // 1.1先读取本地存储的数据
+        // (1). 本地存储有数据则记得转换位对象然后存储到变量里面，后期用于渲染页面
+        // (2). 如果没有数据，则用 空数组来代替
+        const arr = JSON.parse(localStorage.getItem('data')) || []
+        console.log(arr)
+    </script>
+</body>
+</html>
