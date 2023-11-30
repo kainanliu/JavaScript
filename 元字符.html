@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 元字符
+        console.log(/哈/.test('哈'))   //true
+        console.log(/哈/.test('哈哈'))   //true
+        console.log(/哈/.test('二哈'))   //true
+        // 1.边界符
+        console.log(/^哈/.test('哈'))   //true
+        console.log(/^哈/.test('哈哈'))   //true
+        console.log(/^哈/.test('二哈'))   //false
+        console.log(/^哈$/.test('哈'))   //true 只有这一种情况为true否则全是false
+        console.log(/^哈$/.test('哈哈'))   //false  精确匹配,除了‘哈’都是false
+
+    </script>
+</body>
+</html>
