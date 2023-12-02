@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 发送短信验证码模块
+        const code = document.querySelector('.code')
+        let flag = true //通过一个变量来控制   节流阀
+        // 1.1 点击事件
+        code.addEventListener('click', function() {
+            if (flag) {
+                // 取反了，不能马上第二次点击
+                flag = false
+                let i = 5
+            // 点击完毕之后立马触发
+            code.innerHTML = `0${i}秒后重新获取`
+            let timerId = setInterval(function() {
+                i--
+                code.innerHTML = `0${i}秒后重新获取`
+                if (i === 0) {
+                    clearInterval(timerId)
+                    // 重新获取
+                    code.innerHTML = '重新获取'
+                    // 到时间了，可以开启 flag 了
+                    flag = true
+                }
+            }, 1000)
+            }
+        })
+    </script>
+</body>
+</html>
