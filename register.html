@@ -31,6 +31,29 @@
             }, 1000)
             }
         })
+
+
+        // 2.验证的是用户名
+        // 2.1获取用户名表单
+        const username = document.querySelector('[name=username]')
+        // 2.2 使用change事件   值发生变化的时候
+        username.addEventListener('change', verifyName)
+        // 2.3封装函数
+        function verifyName() {
+            // console.log(11)
+            const span = username.nextElementSibling
+            // 2.4 定规则 用户名
+            const reg = /^[a-zA-Z0-9-_]{6,10}$/
+            if (!reg.test(username.value)) {
+                // console.log(11)
+                span.innerText = '输入不合法，请输入6到10位'  //innerHTML一样还能带标签
+                return false
+            }
+
+            // 2.5合法的 就清空span
+            span.innerText = ''
+            return true
+        }
     </script>
 </body>
 </html>
