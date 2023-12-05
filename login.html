@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.tab栏切换  事件委托
+        const tab_nav = document.querySelector('.tab-nav')
+        const pane = document.querySelector('.tab-pane')
+        // 1.1事件监听
+        tab_nav.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                // 取消上个active
+                tab_nav.querySelector('.active').classList.remove('active')
+                // 当前元素添加active
+                e.target.classList.add('active')
+
+                // 先干掉所有人 for循环
+                for (let i = 0; i < pane.length; i++) {
+                    pane[i].style.display = 'none'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
