@@ -1,73 +1,37 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <div class="box w">
-        <div class="box-hd">
-            <h3>精品推荐</h3>
-            <a href="#">产看全部</a>
-        </div>
-        <div class="box-bd">
-            <ul class="clearfix">
-                <!-- <li>
-                    <a href="#">
-                        <img src="images/course01.png" alt="">
-                        <h4>
-                            Think PHP 5.0 博客系统实战项目演习
-                        </h4>
-                        <div class="info">
-                            <span>高级</span> . <span>1125</span>人在学
-                        </div>
-                    </a>
-                </li> -->
-                <script>
-                    let data = [
-                        {
-                            src: 'images/course01.png',
-                            title: 'Think PHP 5.0',
-                            num: 1125
-                        },
-                        {
-                            src: 'images/course02.png',
-                            title: 'Android',
-                            num: 357
-                        },
-                        {
-                            src: 'images/course03.png',
-                            title: 'Angular2',
-                            num: 22250
-                        },
-                        {
-                            src: 'images/course04.png',
-                            title: 'Android APP',
-                            num: 389
-                        }
-                    ]
+    <script>
+        // 1.获取第一个小li
+        const li1 = document.querySelector('.xtx_navs li:first-child')
+        const li2 = li1.nextElementSibling
+        // 2.最好做个渲染函数 因为退出登录需要重新渲染
+        function render() {
+            // 2.1读取本地存储的用户名
+            const uname = localStorage.getItem('xtx-uname')
+            // console.log(uname)
+            if (uname) {
+                li1.innerHTML = `<a href="javascript:;"><i class="iconfont icon-user">${uname}</i></a>`
+                li2.innerHTML = `<a href="javascript:;">退出登录</a>`
+            } else {
+                li1.innerHTML = `<a href="./login.html">请先登录</a>`
+                li2.innerHTML = `<a href="./register.html">免费注册</a>`
+            }
+        }
+        render() //调用函数
 
-                    for (let i = 0; i < data.length; i++) {
-                        document.write(`
-                                    <li>
-                                        <a href="#">
-                                            <img src=${data[i].src} title="${data[i].src}">
-                                            <h4>
-                                                ${data[i].title}
-                                            </h4>
-                                            <div class="info">
-                                                <span>高级</span> . <span>${data[i].num}</span>人在学
-                                            </div>
-                                        </a>
-                                    </li>
-                                    `)
-                    }
-                </script>
-            </ul>
-        </div>
-    </div>
+        //2. 点击退出登录模块
+        li2.addEventListener('click', function() {
+            // 删除本地存储的数据
+            localStorage.removeItem('xtx-uname')
+            // 重新渲染
+            render()
+        })
+    </script>
 </body>
-
 </html>
